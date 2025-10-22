@@ -1,0 +1,30 @@
+.calculator {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: silver;
+}
+
+input {
+    width: 292px;
+}
+
+.numpad {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    width: 100%;
+}
+
+.numpad button {
+    display: block;
+    width: calc(33.3% - 6px);
+}
+
+.operations button {
+    display: block;
+    width: calc(25% - 6.75px);
+}
