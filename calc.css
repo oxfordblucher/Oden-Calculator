@@ -28,3 +28,8 @@ input {
     display: block;
     width: calc(25% - 6.75px);
 }
+
+.history {
+    height: 1rem;
+    text-align: right;
+}

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    let history = document.querySelector('div.history');
     let displayed = document.querySelector('input[name="current"]');
     let current = "";
     let adjust = "";
@@ -79,22 +80,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('button.solve').addEventListener('click', (e) => {
         e.preventDefault();
         let newNum = 0;
+        let symbol = "";
         switch (operation) {
             case "add":
                 newNum = parseFloat(current) + parseFloat(adjust);
+                symbol = "+";
                 break;
             case "subtract":
                 newNum = parseFloat(current) - parseFloat(adjust);
+                symbol = "-";
                 break;
             case "multiply":
                 newNum = parseFloat(current) * parseFloat(adjust);
+                symbol = "*";
                 break;
             case "divide":
                 newNum = parseFloat(current) / parseFloat(adjust);
+                symbol = "/";
                 break;
             default:
                 newNum = current;
         }
+        history.textContent = `${current} ${symbol} ${adjust} =`;
         displayed.value = newNum.toString();
         current = newNum.toString();
         adjust = "";
