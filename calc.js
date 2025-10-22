@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('button.clear').addEventListener('click', (e) => {
         e.preventDefault();
-        if (displayed.value !== "" || displayed.value !== "0") {
-            if (adjust !== "" || adjust !== "0") {
+        if (displayed.value !== "" && displayed.value !== "0") {
+            if (adjust !== "" && adjust !== "0") {
                 adjust = "";
             } else {
                 current = "";
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 current += numBtn.innerText;
                 displayed.value = current;
             } else {
-                if (adjust === "0" || adjust === "") {
+                if (adjust === "0" && adjust === "") {
                     adjust = numBtn.innerText;
                 } else {
                     adjust += numBtn.innerText;
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('button.back').addEventListener('click', (e) => {
         e.preventDefault();
         if (operation !== null) {
-            if (adjust !== "0" || adjust !== "") {
+            if (adjust !== "0" && adjust !== "") {
                 adjust = adjust.slice(0, -1);
             }
             displayed.value = adjust;
